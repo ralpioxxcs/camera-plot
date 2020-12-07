@@ -13,10 +13,10 @@ def toInHomogeneous(A) :
         (x,y,z) -> (x/z, y/z)
     """
     A = np.atleast_2d(A)
-    A /= A[:,-1][:, np.newaxis]
+    A = A / A[:,-1][:, np.newaxis]
     return A[:,:-1]
 
 # if __name__ == "__main__":
-#     x = np.array([[0,6,1],[0,12,1]])
-#     print(toHomogeneous(x))
+#     x = np.array([[0,6],[0,12]])
+#     x = toHomogeneous(x)
 #     print(toInHomogeneous(x))
